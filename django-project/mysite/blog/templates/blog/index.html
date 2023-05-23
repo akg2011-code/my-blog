@@ -7,7 +7,7 @@
 
 {% block content %}
   <div class="px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4 img-thumbnail" src="{% static "blog/images/me.jpg" %}" alt="" width="72" height="57" />
+    <img class="d-block mx-auto mb-4 img-thumbnail" src="{% static "blog/images/me.jpg" %}" alt="" width="150" height="200" />
     <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
@@ -16,6 +16,23 @@
         <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
       </div>
     </div>
+  </div>
+
+<div class="container marketing text-center">
+    <h1 class="display-5 fw-bold text-body-emphasis">My latest thoughts</h1>
+  <br>
+    <div class="row">
+  {% for post in posts %}
+      <div class="col-lg-4">
+            <img class="bd-placeholder-img rounded-circle" src="{{post.image}}" alt="{{post.title}}" width="140" height="140" />
+        <h2 class="fw-normal">{{post.title}}</h2>
+        <p>{{post.excerpt}}</p>
+        <p><a class="btn btn-secondary" href="{% url "post-detail-page" post.slug %}">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      {% endfor %}
+    </div>
+
+
   </div>
 
   <div class="p-5 text-center bg-body-tertiary rounded-3">

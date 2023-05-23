@@ -9,12 +9,9 @@
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        {% include 'blog/includes/post.html' %}
-        {% include 'blog/includes/post.html' %}
-        {% include 'blog/includes/post.html' %}
-        {% include 'blog/includes/post.html' %}
-        {% include 'blog/includes/post.html' %}
-        {% include 'blog/includes/post.html' %}
+        {% for post in all_posts %}
+          {% include 'blog/includes/post.html' %}
+        {% endfor %}
       </div>
     </div>
   </div>
